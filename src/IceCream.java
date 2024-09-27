@@ -5,12 +5,11 @@ public class IceCream extends Dessert {
     private String flavor;
     private int scoops;
     private boolean cupOrBowl; //if true, cup; if false, bowl
-    public IceCream(int calories, int servings, String flavor, int scoops, boolean cupOrBowl) {
+    public IceCream(int calories, int servings, String flavor, int scoops) {
         this.setCalories(calories);
         this.setServings(servings);
-        this.flavor = flavor;
-        this.scoops = scoops;
-        this.cupOrBowl = cupOrBowl;
+        setFlavor(flavor);
+        setScoops(scoops);
     }
     public String getFlavor() {
         return flavor;
@@ -24,10 +23,12 @@ public class IceCream extends Dessert {
     public void setScoops(int scoops) {
         this.scoops = scoops;
     }
-    public boolean isCupOrBowl() {
-        return cupOrBowl;
-    }
-    public void setCupOrBowl(boolean cupOrBowl) {
-        this.cupOrBowl = cupOrBowl;
+    public String toString() {
+        String flavorStr = "Flavor: " + getFlavor() + ", ";
+        String scoopStr = "Scoops: " + getScoops() + ", ";
+        String calorieStr = "Calories: " + this.getCalories() + "\n\n ";
+        String servingStr = "Servings: " + this.getServings() + ",";
+
+        return "Your Ice Cream: \n" + flavorStr + scoopStr + servingStr + calorieStr;
     }
 }
